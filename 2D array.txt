@@ -1,0 +1,68 @@
+// it is array matrix -rows and columns
+#include<stdio.h>
+
+int main()
+{
+    int row,col;
+    printf("Enter the rows and columns:");
+    scanf("%d %d",&row,&col);
+    int arr[row][col];
+
+    int i,j;
+    for(i=0;i<row;i+=1)
+    {
+        for(j=0;j<col;j+=1)
+        scanf("%d",&arr[i][j]);
+    }
+     for(i=0;i<row;i+=1)
+    {
+        for(j=0;j<col;j+=1)
+        printf("%d ",arr[i][j]);
+        printf("\n");
+    }
+
+
+    return 0;
+}
+
+
+
+// matrix sum of outer ,both left and right diagonals. 
+#include<stdio.h>
+int main()
+{
+    int row,col;
+    printf("Enter the rows and columns:");
+    scanf("%d %d",&row,&col);
+    int arr[row][col];
+
+    int i,j;
+    // first scan and print
+
+    for(i=0;i<row;i+=1)
+    {
+        for(j=0;j<col;j+=1)
+        scanf("%d",&arr[i][j]);
+    }
+
+    // only outer scan and sum
+   int sum_left=0;
+    int sum_outer=0;
+    int sum_right=0;
+     for(i=0;i<row;i+=1)
+    {
+        for(j=0;j<col;j+=1)
+        {
+            if(i==0 || i==row-1 || j==0 || j==col-1)
+       sum_outer+=arr[i][j];
+       if(i==j)
+        sum_left+=arr[i][j];
+       if(i+j==row-1)
+       sum_right+=arr[i][j];
+    }
+    }
+    printf("outer sum is %d\n",sum_outer);
+     printf("Left sum is %d\n",sum_left);
+      printf("Right sum is %d",sum_right);
+    return 0;
+    }
