@@ -1,0 +1,68 @@
+
+9/1/2026
+//recursive function
+// this is head recursion
+
+#include<stdio.h>
+
+void natural_no(int num)// function simple sollanumn a process
+{
+    if (num<=0)
+    return 0;
+    printf("%d ",num);
+    natural_no(num-1);
+}
+
+
+int main()              // only declaraion
+{
+    int num;
+    scanf("%d",&num);
+    natural_no(num);
+}
+
+
+//recursive function
+// this is tail recursion
+
+#include<stdio.h>
+
+void natural_no(int num)// function simple sollanumn a process
+{
+    if (num<=0)
+    return 0;
+     natural_no(num-1);
+    printf("%d ",num);
+
+}
+
+
+int main()              // only declaraion
+{
+    int num;
+    scanf("%d",&num);
+    natural_no(num);
+}
+
+
+//factorial in recursive function
+
+#include<stdio.h>
+
+long long int factorial(int num)// function simple sollanumn a process
+{
+    if (num==0 || num==1)
+
+    return 1;
+    return num*factorial(num-1);
+
+}
+
+
+int main()              // only declaraion
+{
+    int num;
+    scanf("%d",&num);
+   printf("%lld",factorial(num));
+
+}
