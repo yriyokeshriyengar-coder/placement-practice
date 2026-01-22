@@ -1,0 +1,55 @@
+
+
+\\ array 
+#include<stdio.h>
+int main()
+{
+
+    int itr;
+    int size;
+    scanf("%d",&size);
+    int arr[size];
+
+    for(itr=0;itr<size;itr+=1)
+    scanf("%d",&arr[itr]);
+
+
+    for(itr=0;itr<size;itr+=1)
+        printf("%d index value is %d\n",itr,arr[itr]);
+
+    return 0;
+}
+
+
+// array
+#include<stdio.h>
+
+int main()
+{
+
+    int size;
+    scanf("%d",&size);
+    int arr[size];
+
+    int temp;
+    int itr;
+
+    for(itr=0;itr<size;itr+=1)
+    scanf("%d",&arr[itr]);
+
+
+  int start=0,end=size-1;
+    while(start<end)
+
+    {
+        temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        start++;
+        end--;
+    }
+ for(itr=0;itr<size;itr+=1){
+        printf("%d",arr[itr]);
+    }
+return 0;
+}
