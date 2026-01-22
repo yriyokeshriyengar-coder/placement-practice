@@ -1,0 +1,113 @@
+// structure - user defined data type
+// memory creating 
+#include<stdio.h>
+struct student
+{
+    int roll_no;
+    char name[20];
+    float cgpa;
+};
+int main()
+{
+    struct student stud;// allocation memory by creating a variable
+    printf("%d",sizeof(stud));
+    return 0;
+}
+
+
+
+
+
+
+
+
+// structure - user defined data type
+// memory creating
+#include<stdio.h>
+#include<string.h>
+
+struct student
+{
+    int roll_no;
+    char name[100];
+    float cgpa;
+}stud;
+int main()
+{
+    //allocation memory by creating a variable
+   // printf("%d",sizeof(stud));
+   int num;
+   char name[100];
+   float cgpa;
+
+   scanf("%d",&num);
+   stud.roll_no=num;
+
+   scanf("[^\n]",&name);
+   strcpy(stud.name,name);
+
+   scanf("%f",&cgpa);
+   stud.cgpa=cgpa;
+
+    printf("%d\n",stud.roll_no);
+    printf("%s\n",stud.name);
+    printf("%f",stud.cgpa);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+19/1/2026
+// structure - indian team players 
+
+#include<stdio.h>
+struct Indian_team
+{
+    char name[20];
+    int age;
+    char birthplace[50];
+    float avg;
+};
+
+int main ()
+{
+    struct Indian_team ind[3];
+    int itr;
+
+    for(itr = 0; itr < 3; itr += 1)
+    {
+        scanf("%s", ind[itr].name);
+        scanf("%d", &ind[itr].age);
+        scanf("%s", ind[itr].birthplace);
+        scanf("%f", &ind[itr].avg);
+    }
+
+    for(itr = 0; itr < 3; itr += 1)
+    {
+        printf("\nPlayer: %d\n", itr + 1);
+        printf("Name : %s\n", ind[itr].name);
+        printf("Age : %d\n", ind[itr].age);
+        printf("Birth place: %s\n", ind[itr].birthplace);
+        printf("Avg : %.2f\n", ind[itr].avg);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
