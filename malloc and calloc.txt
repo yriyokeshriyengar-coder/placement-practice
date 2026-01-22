@@ -1,0 +1,86 @@
+
+12/1/2026
+#include <stdio.h>
+#include <stdlib.h> 
+
+int main() {
+    int num = 7;
+    int *ptr = (int *)malloc(sizeof(int) * num);
+    int itr;
+
+    if (ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; // Exit if memory allocation fails
+    }
+    printf("Enter %d integers:\n", num);
+    for (itr = 0; itr < num; itr++) {
+        scanf("%d", ptr + itr); 
+    }
+
+    printf("Memory Addresses:\n");
+    for (itr = 0; itr < num; itr++) {
+        printf("%p ", (void *)&ptr[itr]); 
+    }
+    printf("\n");
+
+        num = 10;
+    int *new_ptr = (int *)realloc(ptr, sizeof(int) * num);
+
+    if (new_ptr == NULL) {
+        printf("Memory reallocation failed!\n");
+        free(ptr); 
+        return 1;
+    }
+    ptr = new_ptr; // Update ptr to the new memory block
+
+    printf("Enter %d more integers:\n", num - 7); 
+    for (itr = 7; itr < num; itr++) { // Start from where we left off (index 7)
+        scanf("%d", ptr + itr);
+    }
+
+    printf("Data in Reallocated Memory:\n");
+    for (itr = 0; itr < num; itr++) {
+        printf("%d ", ptr[itr]);
+    }
+    printf("\n");
+
+    free(ptr); 
+    return 0;
+}
+Same program with example for only study purpose 
+//realloc memory allocation
+//only two memory can be used inthis for starting either malloc or calloc.
+
+#include<stdio.h>
+
+int main()
+{
+
+    int num=7;
+
+
+    int *ptr=(int*)malloc(sizeof(int)*num);
+
+
+    int itr;
+    for(itr=0;itr<num;itr+=1)
+        scanf("%d",ptr+itr);//memory address
+
+
+    for(itr=0;itr<num;itr+=1)
+    printf("%d ",&ptr[itr]);//data
+
+    free(ptr);
+    num=10;
+    ptr=(int*)realloc(int)*num);
+    for(itr=0;itr<num;itr+=1)
+        printf("%d",ptr+itr)
+    for(itr=0;itr<num;itr+=1)
+          printf("%d",ptr[itr])
+}
+
+
+
+
+
+
